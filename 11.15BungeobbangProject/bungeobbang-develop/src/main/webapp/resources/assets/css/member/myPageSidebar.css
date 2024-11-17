@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+.sidebar {
+	display: flex;
+	flex-direction: column; 
+	gap: 10px; 
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	
+	width: 200px;
+	padding: 20px;
+}
+
+.row-sidebar {
+	display: flex;
+	flex-direction: row; 
+	text-align: center;
+	justify-content: center;
+	
+	gap: 10px;
+	margin-top: 30px;
+}
+
+.myPageBtn {
+	font-size: 100%;
+	height: 39px;
+	width: 150px;
+	
+	color: #212529;
+	background-color: var(--button-background-color) !important;
+	border-color: var(--button-background-color) !important;
+
+}
+.myPageBtn:hover {
+	color: #212529;
+	background-color: var(--button-hover-background-color) !important;
+	border-color: var(--button-hover-background-color) !important;
+}

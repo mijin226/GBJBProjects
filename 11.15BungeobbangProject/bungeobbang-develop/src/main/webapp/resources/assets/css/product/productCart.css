@@ -1,0 +1,278 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+body {
+	font-family: 'Gamja Flower', cursive !important;
+	color: var(--normal-font-color)!important;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header .select-all-container {
+    display: flex;
+    align-items: center;
+}
+
+.select-all-container {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-right: 5px;
+}
+
+.form-check-input:checked {
+    background-color: var(--button-background-color) !important;
+    border-color: var(--button-line-color) !important;
+}
+.form-check-input:focus {
+	border-color: var(--button-background-color); /* 포커스 시 테두리 색상 변경 */
+    box-shadow: 0 0 10px var(--button-background-color) !important; /* 빛나는 효과 */
+}
+
+.cart-products {
+    border-top: 1px solid var(--hr-line-color);
+    padding-top: 20px;
+}
+
+
+#deleteAllBtn {
+    margin-left: 10px;
+}
+
+.product-item {
+    border: 1px solid var(--hr-line-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    width: 100px;
+    height: 60px;
+    background-color: #eee;
+    margin-right: 15px;
+}
+
+.product-image img {
+    width: 100%; /* 이미지의 너비를 부모 div의 100%로 설정 */
+    height: 100%; /* 이미지의 높이를 부모 div의 100%로 설정 */
+    object-fit: cover; /* 이미지가 영역을 가득 채우되, 비율을 유지하며 잘라냄 */
+    border-radius: 8px; /* 테두리를 둥글게 만들고 싶다면 설정 */
+}
+
+.product-quantity select {
+    width: 80px;
+}
+
+.product-checkbox {
+    display: inline-block; /* 체크박스가 제대로 표시되도록 */
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hr-line-color);
+}
+
+.cart-footer .total-price {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.btn-custom {
+    background-color: var(--button-line-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-custom:hover {
+    background-color: var(--button-hover-line-color);
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+/* 배송 정보 및 주문 완료 섹션 스타일 */
+#orderSection {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#orderSection h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    
+    font-size: 160% !important;
+}
+.order-product-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px; /* 아래 간격 추가 */
+}
+
+.product-quantity {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #ff5722;
+    margin-top: 5px; /* 위 간격 추가 */
+}
+
+/* 총 주문 금액을 더 두껍게 보이도록 스타일링 */
+#orderTotalPrice {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* 주소 검색 버튼 스타일 */
+#addressSearchButton {
+    background-color: var(--button-background-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addressSearchButton:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+/* 우편번호 및 주소 입력 필드 스타일 */
+#postcode,
+#addressMain,
+#addressDetail {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--hr-line-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 전화번호 입력 필드 스타일 */
+#phoneInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--hr-line-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 전화번호 변경 버튼 스타일 */
+#phoneChangeButton {
+    background-color: var(--button-background-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#phoneChangeButton:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+/* 다음 주소 검색 레이어 스타일 */
+
+#addressLayer {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin: auto;
+    overflow: auto;
+    position: relative;
+}
+
+#fullscreenDaumPostcode {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+}
+
+#btnCloseLayer {
+    position: absolute; /* 부모 요소의 상대적 위치 기준 */
+    top: 10px; /* 상단 여백 */
+    right: 10px; /* 오른쪽 여백 */
+    background: var(--normal-font-color)!important;
+    color: white; /* 글자색 */
+    border: none; /* 테두리 제거 */
+    padding: 5px 10px; /* 패딩 설정 */
+    border-radius: 30%; /* 둥근 모서리 */
+    font-size: 10px; /* 글자 크기 */
+    cursor: pointer; /* 커서 스타일 (마우스를 올리면 포인터로) */
+    z-index: 10001; /* 다른 요소보다 위에 보이게 설정 */
+}
+
+#btnCloseLayer:hover {
+    background: darkred; /* 마우스를 올렸을 때 배경색 변경 */
+}
+
+
+.btn-outline-secondary {
+	color: var(--button-font-color) !important;;
+    border: 2px solid var(--button-line-color) !important;
+}
+.btn-outline-secondary:hover {
+	color: white !important;
+	background-color: var(--button-background-color) !important;
+	
+}
+
+.allCheck {
+	font-size: 150%;
+}
+
+#myPoint {
+	font-size: 150%;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: translateX(-20px); }
+}
+

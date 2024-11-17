@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+								"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.bungeobbang.app.biz.order.OrderDTO" alias="order" />
+		<typeAlias type="com.bungeobbang.app.biz.orderDetail.OrderDetailDTO" alias="orderDetail" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappings/order-mapping.xml" />
+		<mapper resource="mappings/order-detail-mapping.xml" />
+	</mappers>
+</configuration>

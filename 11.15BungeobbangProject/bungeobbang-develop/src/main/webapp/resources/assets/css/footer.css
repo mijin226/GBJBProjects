@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+#footer {
+	background-color: #f9edb3 !important;
+	padding: 50px;
+	margin: 0px;
+}
+
+#footer h2 {
+	font-weight: bold;
+	font-family: 'Gamja Flower', cursive;
+	text-align: left;
+	
+	color: #7E5B3A;
+}
+
+#footer .footerIcon {
+	width: 35px;
+	vertical-align: middle;
+}
+
+#footer .link-list {
+	list-style-type: none;
+	text-align: left;
+}
+
+#footer .memberName {
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Gamja Flower', cursive;
+	
+	color: #B4934D;
+}
+
+#footer .memberRoll {
+	font-size: 18px !important;
+	font-family: "Nanum Pen Script", cursive;
+	
+	color: #d5b564;
+}
+
+#footer #siteContent {
+	font-size: 23px !important;
+	font-family: "Nanum Pen Script", cursive;
+	text-align: left;
+	
+	color: #d5b564;
+}
+
+#copyright {
+	background-color: #f9edb3 !important;
+}

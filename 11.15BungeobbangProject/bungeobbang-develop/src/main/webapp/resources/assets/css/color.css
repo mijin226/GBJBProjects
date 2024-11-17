@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+:root {
+	/* 배경색 -----------------------------*/
+	/* 페이지 색 */
+	--page-background-color: #fcf4d9;
+	
+	/* tag 배경색 */
+	--tag-background-color: #f9edb3;
+	/* header navbar 배경색 */
+	--navbar-background-color: #f9edb3;
+	
+	/* tag, navbar hover 배경색*/
+	--navbar-hover-background-color: #f3e4a3;
+	
+	/* storeData, 일반 상자 배경색 */
+	--storeData-background-color: #fef8f3;
+	--box-background-color: #fef8f3;
+	
+	/* 버튼 배경 색 */
+	--button-background-color: #FFB347;
+	
+	/* 버튼 hover */
+	--button-hover-background-color: #CC8537;
+	
+	/* 버튼 active */
+	--button-active-background-color: #b37330;
+	 
+	 /* 버튼 2 */
+	--button2-background-color: #fbf197;
+	 
+	/* 버튼2 hover */
+	--button2-hover-background-color: #efe37a;
+	
+	/* 팥 색*/
+	--redbean-background-color: #8B3A3A;
+	
+	
+	/* 글자 색 -------------------------- */
+	/* 페이지 제목(h2), 림크 색 */
+	--page-title-color: #7E5B3A;
+	
+	/* 일반 글자 색 */
+    --normal-font-color: #a87d35;
+	
+	/* section2 제목 글자색 */
+	--section2-font-color: #FFB347;
+	/* 버튼,a 글자색 */
+	--button-font-color: #FFB347;
+	
+	/* 버튼,a hover */
+	--button-hover-font-color: #CC8537;
+	
+	/* td 글자색 */
+	 --td-font-color: #CC8537;
+    
+    
+    /* 선 색 ---------------------------- */
+    /* hr 선 색 */
+    --hr-line-color: #e8da86;
+    
+    /* tag 선 색 */
+    --tag-line-color: #e6c57a;
+    /* navbar 선 색 */
+    --navbar-line-color: #e6c57a;
+    
+    /* 마우스로 클릭 또는 닿았을 대 변경되는 색 */
+    --focus-line-color: #d8c15a;
+    
+    /* 버튼 선 색 */
+    --button-line-color: #FFB347;
+    
+    /* 버튼 hover 선 색 */
+    --button-hover-line-color: #CC8537;
+}

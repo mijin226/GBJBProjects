@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* 모든 a 태그의 기본 스타일 재정의 */
+a,
+a:link,
+a:visited {
+    text-decoration: none !important; /* 모든 상태에서 밑줄을 강제로 제거 */
+    color: inherit; /* 부모 요소의 색상 속성을 상속받아 일관성 유지 */
+}
+
+/* a 태그의 호버 및 포커스 시에도 밑줄 제거 */
+a:hover,
+a:focus {
+    text-decoration: none !important; /* 호버 상태에서도 강제로 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상 유지 */
+}
+
+/* 그리드 레이아웃 설정: 2행 3열 */
+.section3-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 6fr; /* 두 번째 행의 열 비율을 2:2:6로 지정 */
+    grid-template-rows: auto 1fr; /* 첫 번째 행은 자동 크기 조절, 두 번째 행은 1:1 크기 */
+    gap: 20px; /* 그리드 아이템 간격 */
+}
+
+/* 제목 스타일 및 배너와의 간격 설정 */
+.section-title {
+    font-size: 2em; /* 글씨 크기 */
+    margin-bottom: 20px; /* 배너와의 간격 설정 */
+    color: #000; /* 글자 색을 검정으로 설정 */
+    font-weight: bold;
+    position: relative;
+    left: 25%; /* 페이지 중앙과 오른쪽 사이 위치 */
+    transform: translateX(-10%); /* 약간 더 오른쪽으로 이동 */
+    padding: 10px 20px; /* 텍스트 주변 여백 추가 */
+    border-radius: 8px; /* 모서리를 둥글게 설정 */
+}
+
+/* 배너 스타일: 첫 번째 행에 전체 너비로 표시 */
+.banner-row {
+    grid-column: 1 / span 3; /* 그리드 1행 전체를 차지 */
+    text-align: center;
+    display: flex;
+    gap: 10px; /* 배너 이미지 간격 조정 */
+    justify-content: center; /* 중앙 정렬 */
+}
+
+/* 배너 컨테이너 스타일 */
+.banner-container {
+    width: 100%; /* 배너 컨테이너 너비를 100%로 설정 */
+    height: 300px; /* 배너 높이 설정 */
+    overflow: hidden; /* 배너 컨테이너 밖으로 넘치는 내용 숨기기 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.0); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(0.05px); /* 배경에 흐림 효과 추가 */
+}
+
+/* 슬라이드 전체를 감싸는 div */
+.banner-slide {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center; /* 이미지 중앙 정렬 */
+    align-items: center;
+}
+
+/* 배너 이미지 스타일 */
+.banner-image {
+    max-width: 100%; /* 배너 컨테이너에 맞춰 가로 크기 조정 */
+    max-height: 100%; /* 배너 컨테이너에 맞춰 세로 크기 조정 */
+    object-fit: contain; /* 이미지 비율 유지하면서 크기 조정 */
+    display: none; /* 기본적으로 이미지를 숨겨두고 필요 시 표시 */
+}
+
+/* 링크 박스 스타일 */
+.link-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(5px); /* 흐림 효과 추가 */
+    border-radius: 10px; /* 박스 모서리를 둥글게 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+}
+
+/* 링크 이미지 스타일 */
+.link-image {
+    width: 100%;
+    border-radius: 10px 10px 0 0; /* 상단 모서리만 둥글게 */
+}
+
+/* 링크 이미지에 호버 효과 */
+.link-box:hover .link-image {
+    transform: scale(1.05); /* 호버 시 이미지 확대 */
+    filter: brightness(1.1); /* 호버 시 밝기 증가 */
+}
+
+/* 링크 텍스트 스타일 */
+.link-text {
+    padding: 10px;
+    font-size: 1.1em; /* 텍스트 크기 */
+    font-weight: bold;
+    color: #333; /* 텍스트 색상 */
+    background-color: #f9f9f9;
+    border-radius: 0 0 10px 10px; /* 하단 모서리 둥글게 설정 */
+}
+
+/* 호버 시 텍스트 색상 강조 */
+.link-box:hover .link-text {
+    color: #FF6347; /* 호버 시 텍스트 색상 변경 */
+}
+
+/* 인기 게시물 스타일 */
+.posts-column {
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(5px); /* 배경에 흐림 효과 추가 */
+    padding: 20px;
+    border-radius: 10px; /* 모서리를 둥글게 설정 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.popular-posts li {
+    margin-bottom: 15px; /* 리스트 아이템 간 간격 조정 */
+}
