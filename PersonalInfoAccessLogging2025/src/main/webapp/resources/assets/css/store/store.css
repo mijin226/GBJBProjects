@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+body {
+    font-family: 'Gamja Flower', cursive !important;
+}
+
+:root{
+    /* font-size */
+    --store-data-content-font-size: 100%;
+    
+    /* size */
+    --icon-size: 8%;
+}
+
+.container h2 {
+	font-weight: bold;
+	font-family: 'Gamja Flower', cursive;
+	font-size: 40px;
+	
+	color: var(--page-title-color);
+}
+.container h4 {
+	font-weight: bold;
+	font-family: 'Gamja Flower', cursive;
+	font-size: 35px;
+	
+	color: var(--normal-font-color);
+}
+.container h5 {
+	font-family: 'Gamja Flower', cursive;
+	font-size: 30px;
+	
+	color: var(--normal-font-color);
+}
+
+.container hr {
+	border: 1px solid var(--hr-line-color);
+}
+
+.viewContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col-12 {
+    overflow: hidden;
+}
+
+.col-9 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.storeName {
+    width: 100%;
+    font-size: 200%;
+}
+
+.tag {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--tag-line-color);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 3px;
+    margin: 5px;
+
+    background-color: var(--tag-background-color);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tag#openStore {
+    font-size: 40%;
+    background-color: lightgreen;
+    color: white;
+    border: hidden;
+    margin: 1px;
+}
+.tag#closedStore {
+    font-size: 40%;
+    background-color: red;
+    color: white;
+    border: hidden;
+    margin: 1px;
+}
+
+.weekList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.listValue {
+    margin: 20px 0;
+}
+
+.tag .week {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.map-height {
+    height: 50%;
+}
+
+.map-width {
+    width: 50%;
+}
+
+.map {
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapValue {
+    width: 100%;
+    height: 100%;
+}
+
+.data-height {
+    height: 150px;
+}
+
+.storeDataOne {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    margin: 5px;
+    
+    font-size: 21px;
+    color: var(--normal-font-color);
+    font-family: 'Gamja Flower', cursive;
+}
+
+.storeDataContent {
+    font-size: var(--store-data-content-font-size);
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .storeDataContent i {
+  font-size: 100%;
+  }
+  
+  .storeDataContent span {
+    width: 80%;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .storeDataContent button {
+    font-size: 80%;
+    width: 17%;
+    white-space: nowrap;
+    
+    background: var(--tag-background-color);
+    border: 2px solid var(--tag-line-color);
+    border-radius: 5px;
+    
+    font-family: normal;
+  }
+
+.icon {
+    width: var(--icon-size);
+  }
+  
+  .dropdown {
+	margin: 20px;
+}
+
+.dropdown select {
+	width: 100%;
+	padding: 4px; /* 패딩 줄이기 */
+	font-size: 16px; /* 폰트 크기 줄이기 */
+}
+
+.warningBox {
+	margin: 10px;
+}
+
+#deleteBtn {
+	margin-left: 5px;
+	
+	background-color: red;
+	border: 0px;
+	color: white;
+	
+	border-radius: 3px;
+}
+
+/* 하이퍼링크같은 스타일 */
+.closedReport {
+  background-color: transparent;
+  color: #3498db;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 마우스를 가져다 대면 스타일이 변경 */
+.closedReport:hover {
+	color: #001f3f;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+/* 클릭 후 테두리 생기지 않게 */
+.closedReport:focus {
+    outline: none; /* 포커스 시 아웃라인 없애기 */
+    box-shadow: none; /* 클릭 시 생기는 그림자 효과 없애기 */
+}
+
+  @media(max-width:1200px){
+    .container {
+        min-width: 600px;
+    }
+  }

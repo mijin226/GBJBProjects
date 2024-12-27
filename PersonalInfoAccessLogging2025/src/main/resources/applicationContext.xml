@@ -1,0 +1,76 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                  http://www.springframework.org/schema/beans/spring-beans.xsd
+                  http://www.springframework.org/schema/context
+                  http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                  http://www.springframework.org/schema/aop
+                  http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+                  http://www.springframework.org/schema/tx
+                  http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+    <!--annotation scan-->
+    <context:component-scan base-package="com.bungeobbang.app.biz"/>
+
+    <!--AOP 사용 중 안내-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+	<!--DataSource-->
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="ds" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/fishshapedbread" />
+		<property name="username" value="root" />
+		<property name="password" value="1234" />
+	</bean>
+	<bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+
+	<!--Transaction-->
+	<bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="txManager">
+		<property name="dataSource" ref="ds" />
+	</bean>
+   	<tx:advice transaction-manager="txManager" id="txAdvice">
+		<tx:attributes>
+			<tx:method name="select*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut expression="execution(* com.bungeobbang.app.biz..*Impl.*(..))" id="txPointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+
+	<!-- 이메일 info -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location" value="classpath:application.properties" />
+	</bean>
+	
+
+	<!--mail 의존주입 문제 해결용 빈 객체 : 작동될 수 있도록 수정바람-->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <property name="host" value="smtp.naver.com"/> 
+	    <property name="port" value="465"/> 
+	    <property name="username" value="${MAIL_USERNAME}"/>
+	    <property name="password" value="${MAIL_PASSWORD}"/>
+	    <property name="javaMailProperties">
+	        <props>
+	            <prop key="mail.smtp.auth">true</prop>
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	            <prop key="mail.smtp.ssl.enable">true</prop>
+	            <prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
+	        </props>
+	    </property>
+	</bean>
+    	<!-- SqlSession Template Bean 생성 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+       		<property name="dataSource" ref="ds" />
+       		<property name="configLocation" value="classpath:sql-map-config.xml" />
+   	</bean>
+   	<bean id="mybatis" class="org.mybatis.spring.SqlSessionTemplate">
+    	 	  <constructor-arg ref="sqlSession" />
+   	</bean>
+</beans>

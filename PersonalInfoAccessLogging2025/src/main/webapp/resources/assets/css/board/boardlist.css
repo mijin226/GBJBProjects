@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+body {
+    font-family: 'Gamja Flower', cursive !important;
+}
+
+form {
+	display: contents;
+	margin: 0px;
+	padding: 0px;
+}
+
+.categoryBox {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	
+	width: 100%;
+	height: 100%;
+	white-space: normal;
+}
+
+#searchBox {
+	height: 60%;
+}
+
+.boardWriteBtn {
+	display: inline-block;
+	padding: 5px;
+	
+	background-color: lightgray;
+	color: black;
+	border-radius: 0.5vw;
+	border: 1px solid gray;
+	
+	
+	font-size: 1vw;
+	white-space: nowrap;
+}
+
+/* 테이블 넓이 */
+.tableDate {
+    width: 10%;
+}
+.tableNum {
+    width: 8%;
+}
+.tableTitle {
+    width: 52%;
+}
+.tableWriter {
+    width: 10%;
+}
+.tableReplyNum {
+    width: 10%;
+}
+.tableLike {
+    width: 10%;
+}
+.tableCategory {
+	width: 10%;
+}
+
+.button-orange {
+    color: white !important;
+    background-color: var(--button-font-color) !important;
+    border-color: var(--button-font-color) !important;
+    
+    margin: 3px !important;
+}
+.button-orange:hover {
+    background-color: var(--button-hover-background-color) !important;
+    border-color: var(--button-hover-background-color) !important;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.hot {
+	color: red;
+	font-weight: bold;
+	animation: sparkle 1s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

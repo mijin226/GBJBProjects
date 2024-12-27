@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+body {
+    font-family: 'Gamja Flower', cursive !important;
+}
+
+.row {
+	width: 100%;
+}
+
+h3 {
+	margin-right: 20px;
+}
+
+section {
+	margin: 15px;
+}
+
+input[type="text"], input[type="tel"]{
+	width:  100%;
+	height: 40px;
+	
+	font-size: 100%;
+}
+
+input[type="checkbox"] {
+	margin: 3px;
+}
+
+input[type="submit"] {
+	margin: 10px;
+	width: 20%;
+}
+
+.aliHorizon {
+	display: flex;
+	align-content: center;
+}
+
+table {
+	font-size: 20px;
+}
+
+td, tr {
+	margin: 5px;
+}
+
+td {
+	width: 30%;
+}
+
+.menuTable td{
+	width: 60%;
+	white-space: nowrap;
+}
+
+button {
+	display: inline-block !important;
+	padding: 3px !important;
+}
+
+.import {
+	color: red;
+}

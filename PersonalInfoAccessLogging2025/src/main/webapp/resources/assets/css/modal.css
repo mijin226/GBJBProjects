@@ -1,0 +1,55 @@
+@import url('../color.css');
+
+.modal {
+	top: 20% !important;
+}
+
+.modal-title {
+	font-weight: bold;
+	color: var(--page-title-color);
+}
+
+.modal-header {
+	border: 1px solid var(--hr-line-color);
+}
+.modal-body {
+	border: 1px solid var(--hr-line-color);
+}
+
+.modal-body .form-group {
+	color: var(--normal-font-color);
+	font-size: 120%;
+}
+
+.modal-body input[type="text"], 
+.modal-body input[type="email"],
+.modal-body input[type="password"] {
+	border: 1px solid var(--hr-line-color);
+}
+
+.modal-body input[type="text"]:focus, 
+.modal-body input[type="email"]:focus,
+.modal-body input[type="password"]:focus {
+	border-color: var(--button-background-color); /* 포커스 시 테두리 색상 변경 */
+    box-shadow: 0 0 10px var(--button-background-color); /* 빛나는 효과 */
+}
+
+.close {
+	color: var(--page-title-color) !important;
+}
+
+.btn-orange {
+    color: #fff !important;
+    background-color: var(--button-background-color) !important;
+    border-color: none;
+}
+.btn-orange:hover {
+    background-color: var(--button-hover-background-color) !important;
+}
+
+.modal-body a {
+	color: var(--button-font-color) !important;
+}
+.modal-body a:hover {
+	color: var(--button-hover-font-color) !important;
+}

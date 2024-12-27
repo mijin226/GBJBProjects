@@ -1,0 +1,229 @@
+@charset "UTF-8";
+/* ====== 로고 및 헤더 스타일 ====== */
+.header {
+	font-family: 'Gamja Flower', sans-serif;
+}
+
+/* 로고 크기 및 이미지 정렬 */
+.navbar {
+    background-color: var(--navbar-background-color) !important; /* 기본 배경색 */
+    border-bottom: 1px solid var(--navbar-line-color); /* 얇은 하단 테두리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand img {
+    width: 40px; /* 로고 이미지의 너비를 40px로 설정 */
+    height: auto; /* 비율에 맞게 높이 자동 설정 */
+    margin-right: 10px; /* 로고와 텍스트 사이에 여백 */
+    display: flex;
+    align-items: center;
+}
+
+/* 로고 텍스트 스타일 */
+.navbar-brand {
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 32px;  /* 로고 글씨 크기 설정 */
+    display: flex;
+    align-items: center; /* 로고와 텍스트가 수직으로 정렬되도록 설정 */
+    gap: 5px; /* 로고와 텍스트 사이의 간격 */
+}
+
+/* ====== 네비게이션 메뉴 스타일 ====== */
+/* 네비게이션 메뉴 링크 스타일 */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link-btn { /* .nav-link-btn 클래스 추가 */
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 20px; /* 링크 글씨 크기 */
+    color: #333; /* 링크 기본 색상 */
+    padding-bottom: 5px; /* 밑줄과 텍스트 사이 간격 */
+    border: none;
+    position: relative; /* 하단 밑줄을 위한 위치 설정 */
+    display: inline-block; /* 다른 링크와 동일하게 보이도록 설정 */
+    transition: color 0.3s ease; /* 색상이 부드럽게 변하도록 전환 효과 */
+    background: none; /* 버튼의 배경 제거 */
+    border: none; /* 버튼의 기본 테두리 제거 */
+    cursor: pointer; /* 클릭할 수 있는 상태 표시 */
+    outline: none; /* 버튼의 기본 아웃라인 제거 */
+}
+
+/* 마우스를 올렸을 때 효과 */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link-btn:hover { /* .nav-link-btn 클래스 추가 */
+    color: #007bff; /* 링크에 마우스를 올렸을 때 색상이 더 진해짐 */
+}
+
+/* 활성화된 링크 스타일 */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link-btn.active { /* .nav-link-btn 클래스 추가 */
+    color: #007bff; /* 활성화된 링크 색상 */
+    font-weight: bold; /* 강조를 위해 굵게 */
+    border-bottom: 2px solid #007bff; /* 하단 밑줄 */
+}
+
+.navbar-nav .nav-link-btn::after { /* .nav-link-btn 클래스 추가 */
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FF6347; 
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.navbar-nav .nav-link-btn:hover::after { /* .nav-link-btn 클래스 추가 */
+    width: 100%; 
+}
+/*navbar sidebar 갈빵질빵 텍스트 CSS */
+.navbar-brand-text {
+    color: var(--page-title-color); /* 기본 검은색 */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 부드러운 전환 효과 */
+}
+.navbar-brand-text:hover {
+    color: #FF6347; 
+}
+
+.dropdown {
+	margin: 0;
+}
+.dropdown-menu .dropdown-item {
+	font-family: 'Gamja Flower', sans-serif !important;
+}
+
+/* ====== 사이드바 스타일 ====== */
+#sidebar {
+    position: fixed; /* 사이드바를 화면에 고정 */
+    top: 0;
+    left: -250px; /* 기본적으로 사이드바는 화면 밖에 위치 */
+    width: 250px; /* 사이드바 너비 설정 */
+    height: 100%; /* 화면 전체 높이로 설정 */
+    background-color: var(--tag-background-color) !important; /* 사이드바 배경색 */
+    padding-top: 20px; /* 사이드바 상단에 여백 추가 */
+    transition: all 0.3s ease; /* 사이드바가 부드럽게 열리고 닫히도록 전환 효과 */
+    z-index: 1300; /* 사이드바가 다른 요소들 위에 표시되도록 z-index 설정 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+}
+
+/* 사이드바 내 네비게이션 링크 스타일 */
+#sidebar ul {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0;
+}
+
+#sidebar .nav-link {
+    padding: 10px 20px; /* 링크 텍스트 주변에 여백 추가 */
+    display: block; /* 링크를 블록 요소로 설정하여 클릭 범위 확대 */
+    color: var(--page-title-color) !important; /* 링크 기본 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-size: 16px; /* 링크 글씨 크기 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글씨 색 전환 효과 */
+}
+
+#sidebar .nav-link:hover {
+    background-color: #ddd; /* 마우스를 올렸을 때 배경색 */
+    color: #000; /* 마우스를 올렸을 때 글씨 색상 */
+}
+#navbar-brand d-flex align-items-center {
+	font-family: 'Gamja Flower', sans-serif;
+	font-weight: bold;
+}
+
+/* ====== 본문 스타일 ====== */
+body {
+    margin-left: 0; /* 사이드바가 닫혀 있을 때 본문 마진 없음 */
+    transition: margin-left 0.3s ease; /* 사이드바 열릴 때 부드럽게 본문 이동 */
+}
+
+body.sidebar-open {
+    margin-left: 250px; /* 사이드바 너비만큼 네비게이션 바를 오른쪽으로 이동 */
+    transition: margin-left 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 헤더가 화면 상단에 정확히 붙도록 설정 */
+.header {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: relative; /* 고정 위치가 필요하다면 fixed로 설정 */
+    width: 100%;
+}
+
+/* ====== 사이드바 토글 버튼 스타일 ====== */
+#toggleSidebar {
+    background-color: #f9e09a; /* 버튼 배경색 */
+    border: 2px solid #E6C57A; /* 버튼 테두리 */
+    border-radius: 50px; /* 버튼을 둥글게 만듦 */
+    padding: 10px 15px; /* 버튼 안쪽 여백 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 그림자 추가 */
+    transition: all 0.3s ease; /* 버튼에 부드러운 전환 효과 추가 */
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px; /* 최소 너비 */
+    min-height: 45px; /* 최소 높이 */
+}
+
+/* 토글 버튼 안의 아이콘 스타일 */
+#toggleSidebar i {
+    font-size: 18px; /* 아이콘 크기 */
+    color: #333; /* 아이콘 색상 */
+}
+
+/* 버튼 hover 시 효과 */
+#toggleSidebar:hover {
+    background-color: #f0f0f0; /* hover 시 배경색 변경 */
+    border-color: #888888; /* hover 시 테두리 색상 변경 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* hover 시 그림자 더 강조 */
+    cursor: pointer;
+}
+
+/* 버튼 클릭 시 눌리는 효과 */
+#toggleSidebar:active {
+    background-color: #e0e0e0; /* 클릭 시 배경색 변경 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 축소 */
+    transform: translateY(2px); /* 클릭 시 버튼이 눌리는 효과 */
+}
+.logo-img {
+    width: 40px; /* 로고 이미지의 너비 설정 */
+    height: auto; /* 비율 유지 */
+}
+
+#closeSidebar {
+	background-color: #f9e09a;
+	border: #e6c57a;
+}
+
+
+/* ====== 반응형 스타일 ====== */
+@media screen and (max-width: 768px) {
+    #sidebar {
+        width: 100%; /* 모바일 화면에서는 사이드바가 전체 너비를 차지 */
+        left: -100%; /* 사이드바를 화면 밖으로 숨김 */
+    }
+
+    /* 사이드바가 열렸을 때 모바일 화면에서도 본문 마진 제거 */
+    body.sidebar-open {
+        margin-left: 0;
+    }
+
+    /* 모바일 화면에서 사이드바가 열렸을 때 */
+    body.sidebar-open #sidebar {
+        left: 0; /* 사이드바를 화면에 표시 */
+        width: 100%; /* 전체 너비 차지 */
+    }
+    .navbar-nav .nav-link {
+	    padding: 10px 5px; /* 모바일에서는 간격 줄이기 */
+	    font-size: 14px; /* 글씨 크기 조정 */
+    }
+}

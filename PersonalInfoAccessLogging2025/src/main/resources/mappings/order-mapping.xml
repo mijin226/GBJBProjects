@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderDAO">
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="orderNum" keyColumn="orderNum">
+		INSERT INTO BB_ORDER (MEMBER_NUM,
+		ORDER_ADDRESS)
+		VALUES (#{memberNum},#{orderAddress})
+	</insert>
+	<update id="update">
+		UPDATE BB_ORDER
+		SET ADMIN_CHECKED = #{adminChecked}
+		WHERE ORDER_NUM = #{orderNum}
+	</update>
+	<select id = "selectAll" resultType="order">
+		SELECT
+			o.ORDER_NUM AS orderNum,
+			o.ADMIN_CHECKED AS adminChecked,
+			DATE_FORMAT(o.ORDER_DATE, '%Y.%m.%d %H:%i') AS orderDate,
+			o.ORDER_ADDRESS AS orderAddress,
+			(SELECT SUM(p.PRODUCT_PRICE * d.ORDER_QUANTITY)
+			 FROM BB_ORDER_DETAIL d
+					  JOIN BB_PRODUCT p ON d.PRODUCT_NUM = p.PRODUCT_NUM
+			 WHERE d.ORDER_NUM = o.ORDER_NUM) AS totalPrice,
+			m.MEMBER_EMAIL AS memberEmail
+		FROM
+			BB_ORDER o
+				JOIN
+			BB_MEMBER m ON o.MEMBER_NUM = m.MEMBER_NUM
+		ORDER BY
+			ADMIN_CHECKED, o.ORDER_NUM DESC
+	</select>
+	<select id="selectAll_member" resultType="order">
+		SELECT
+			O.MEMBER_NUM AS memberNum,
+			OD.PRODUCT_NUM AS prductNum,
+			PD.PRODUCT_PRICE AS productPrice,
+			PD.PRODUCT_NAME AS productName,
+			O.ORDER_NUM AS orderNum,
+			DATE_FORMAT(o.ORDER_DATE, '%Y.%m.%d %H:%i') AS orderDate,
+			OD.ORDER_QUANTITY AS orderQuantity,
+			(PD.PRODUCT_PRICE * OD.ORDER_QUANTITY) AS totalPrice
+		FROM BB_ORDER O
+		JOIN 
+			BB_ORDER_DETAIL OD ON O.ORDER_NUM = OD.ORDER_NUM
+		JOIN
+			BB_PRODUCT PD ON OD.PRODUCT_NUM = PD.PRODUCT_NUM
+		WHERE
+			O.MEMBER_NUM = #{memberNum};
+	</select>
+</mapper>

@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import url('../color.css');
+
+/* 전체 레이아웃 스타일 */
+body {
+    margin: 0;
+    padding-top: 30px;
+    font-family: 'Gamja Flower', cursive !important;
+    max-width: 100%;
+    overflow-x: hidden; /* 양옆으로 넘어가지 않게 설정 */
+}
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 40px; 
+}
+
+/* 결제 상태 필터 폰트 크기 */
+.small-font {
+    font-size: 1.25rem; 
+}
+
+/* 결제 상태 선택 박스 반응형 */
+.small-select {
+    font-size: 0.85rem;
+    width: 100%; 
+    max-width: 300px; 
+    margin-top: 15px;
+    margin-left: 15px;
+    
+    border: 1px solid var(--hr-line-color) !important;
+    background-color: var(--box-background-color) !important;
+}
+
+.current-point {
+    margin-right: 30px; 
+    color: var(--normal-font-color);
+}
+
+.current-point-note {
+    margin-right: 30px; 
+    color: red !important;
+}
+
+.current-point2 {
+    margin-left: 30px;
+    margin-top: 15px; 
+    
+    font-weight: bold;
+    color: var(--page-title-color);
+}
+/* 테이블 스타일 */
+.order-history {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto; 
+}
+
+
+
+
+/* 스크롤 가능한 테이블 영역 */
+.scrollable-table {
+    display: block;
+    max-height: 800px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    padding: 20px; /* 테이블 양옆 패딩 추가 */
+    padding-top: 0px;
+    margin-bottom: 20px; /* 아래에 여백 추가 */
+    
+    height: 800px;
+}
+
+/* 테이블 헤더 고정 */
+.scrollable-table thead th {
+    position: sticky;
+    top: 0;
+}
+
+/* 반응형 디자인 - 화면 크기별 레이아웃 조정 */
+@media (max-width: 768px) {
+    .small-select {
+        width: 100%; /* 작은 화면에서는 선택 상자가 전체 너비를 사용 */
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .small-font {
+        font-size: 1.1rem; /* 작은 화면에서는 폰트 크기를 더 줄임 */
+    }
+
+    .scrollable-table {
+        padding: 15px; /* 작은 화면에서는 패딩을 조금 줄임 */
+    }
+}
